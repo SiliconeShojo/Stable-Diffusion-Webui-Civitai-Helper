@@ -1,4 +1,7 @@
 # Change Log
+## v1.8.14
+* Fix compatibility with Gradio v4
+
 ## v1.8.13
 * Fix compatibility with non-Forge instances
 

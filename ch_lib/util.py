@@ -172,7 +172,7 @@ def gen_file_sha256(filename:str, model_type="lora", use_addnet_hash=False) -> s
         yield sha256_value
         return
 
-    if shared.cmd_opts.no_hashing:
+    if getattr(shared.cmd_opts, "no_hashing", False):
         printD("SD WebUI Civitai Helper requires hashing functions for this feature. \
             Please remove the commandline argument `--no-hashing` for this functionality.")
         yield None

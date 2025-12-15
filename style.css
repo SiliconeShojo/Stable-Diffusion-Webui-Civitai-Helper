@@ -1,15 +1,63 @@
 blockquote ul {
-    list-style:disc;
-    margin:4px 40px;
-}
-
-blockquote ol {
-    list-style:decimal;
+    list-style: disc;
     margin: 4px 40px;
 }
 
-.block.padded.ch_box {
-    padding: 10px !important;
+blockquote ol {
+    list-style: decimal;
+    margin: 4px 40px;
+}
+
+.ch_box {
+    margin-bottom: 20px !important;
+    background: var(--background-fill-secondary) !important;
+    border: 1px solid var(--border-color-primary) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    overflow: hidden !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.ch_box:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.ch_box>.label-wrap {
+    padding: 10px 15px !important;
+    border-bottom: 1px solid var(--border-color-primary) !important;
+    background: var(--background-fill-primary) !important;
+    font-size: 1.1em !important;
+    font-weight: 600 !important;
+}
+
+/* Modern Button Styling */
+#tab_civitai_helper button.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    font-weight: bold !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+#tab_civitai_helper button.primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.15) !important;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+}
+
+#tab_civitai_helper button:not(.primary) {
+    border-radius: 8px !important;
+    border: 1px solid var(--border-color-primary) !important;
+    transition: all 0.2s !important;
+}
+
+#tab_civitai_helper button:not(.primary):hover {
+    border-color: #667eea !important;
+    color: #667eea !important;
+    background: var(--background-fill-secondary) !important;
 }
 
 .block.padded.ch_vpadding {
@@ -44,6 +92,7 @@ blockquote ol {
     justify-content: center;
     align-content: center;
 }
+
 @media only screen and (min-width: 600px) {
     #ch_dl_preview_img {
         max-width: 512px;
@@ -91,12 +140,12 @@ blockquote ol {
     font-size: var(--input-text-size);
     line-height: var(--line-sm);
     box-shadow: var(--input-shadow);
-    font-family:var(--font);
+    font-family: var(--font);
     pointer-events: none;
 }
 
 /* Lobe theme */
-.actions .additional > a {
+.actions .additional>a {
     display: none;
 }
 
@@ -104,7 +153,7 @@ blockquote ol {
  * Gross, ugly, and I hate it, but the only way to override an
  * !important is with a more granular !important.
  */
-.acss-culdhq .extra-networks .actions .additional > ul a.card-button {
+.acss-culdhq .extra-networks .actions .additional>ul a.card-button {
     margin: 0px 2px !important;
     padding: 2px !important;
     font-size: 150% !important;
@@ -117,8 +166,8 @@ blockquote ol {
 }
 
 /* Work around a display bug in Lobe that causes an infinite counter */
-#txt2img_extra_tabs [id*="_cards_html"] .progress-text ,
-#img2img_extra_tabs [id*="_cards_html"] .progress-text  {
+#txt2img_extra_tabs [id*="_cards_html"] .progress-text,
+#img2img_extra_tabs [id*="_cards_html"] .progress-text {
     display: none;
 }
 
@@ -128,62 +177,76 @@ blockquote ol {
 /* Perhaps figure out a less hacky way to write this... */
 #ch_search {
     overflow: scroll;
-    max-height: 85vh; /* maybe try to figure out a way to fill the whole screen unless it's under a certain resolution? */
+    max-height: 85vh;
+    /* maybe try to figure out a way to fill the whole screen unless it's under a certain resolution? */
 }
+
 #ch_search .cards_container {
     grid-template-columns: 340px;
 }
+
 @media screen and (min-width: 800px) {
     #ch_search .cards_container {
         grid-template-columns: 340px 340px;
     }
 }
+
 @media screen and (min-width: 1200px) {
     #ch_search .cards_container {
         grid-template-columns: 340px 340px 340px;
     }
 }
+
 @media screen and (min-width: 1400px) {
     #ch_search .cards_container {
         grid-template-columns: 340px 340px 340px 340px;
     }
 }
+
 @media screen and (min-width: 2000px) {
     #ch_search .cards_container {
         grid-template-columns: 340px 340px 340px 340px 340px;
     }
 }
+
 @media screen and (min-width: 2400px) {
     #ch_search .cards_container {
         grid-template-columns: 340px 340px 340px 340px 340px 340px;
     }
 }
+
 @media screen and (min-width: 2800px) {
     #ch_search .cards_container {
         grid-template-columns: 340px 340px 340px 340px 340px 340px 340px;
     }
 }
+
 @media screen and (min-width: 3200px) {
     #ch_search .cards_container {
         grid-template-columns: 340px 340px 340px 340px 340px 340px 340px 340px;
     }
 }
+
 @media screen and (min-width: 3800px) {
     #ch_search .cards_container {
         grid-template-columns: 340px 340px 340px 340px 340px 340px 340px 340px 340px;
     }
 }
+
 @media screen and (min-width: 4200px) {
     #ch_search .cards_container {
         grid-template-columns: 340px 340px 340px 340px 340px 340px 340px 340px 340px 340px;
     }
 }
+
 #ch_scan_dup_model_log_md {
     overflow: auto !important;
 }
+
 #ch_scan_dup_model_log_md img {
     max-width: 25vw;
 }
+
 #ch_search {
     & .cards_container {
         display: grid;
@@ -192,9 +255,11 @@ blockquote ol {
         box-spacing: 20px;
         width: fit-content;
     }
+
     & .body_container {
         display: block;
     }
+
     & .desktop .search_container {
         position: fixed;
         top: 0;
@@ -202,9 +267,11 @@ blockquote ol {
         right: 0;
         z-index: 100;
     }
+
     & .search_container {
-        background-color: rgba(0,0,0,0.6);
+        background-color: rgba(0, 0, 0, 0.6);
     }
+
     & .model_card {
         position: relative;
         text-align: left;
@@ -215,6 +282,7 @@ blockquote ol {
         margin: 10px;
         font-size: 3em;
     }
+
     & .description {
         transition: height ease-in-out .3s;
         overflow: hidden;
@@ -225,33 +293,39 @@ blockquote ol {
         position: absolute;
         background-color: #000;
         font-size: 12pt;
-        z-index:10;
+        z-index: 10;
         left: 0px;
     }
-    & div:hover > .description {
+
+    & div:hover>.description {
         height: 480px;
         overflow-y: scroll;
     }
+
     & .description .text {
         padding: 10px;
         width: 320px;
         overflow: hidden;
     }
+
     & .error {
         margin: 3em;
     }
+
     & .preview {
-        width:320px;
-        height:480px;
+        width: 320px;
+        height: 480px;
         overflow: hidden;
         float: left;
         position: relative;
     }
+
     & .preview_container {
-        width:320px;
-        height:480px;
+        width: 320px;
+        height: 480px;
         position: relative;
     }
+
     & .preview_container img,
     .preview_container video {
         position: absolute;
@@ -265,7 +339,7 @@ blockquote ol {
         position: absolute;
         bottom: 0;
         text-align: center;
-        background-color: rgba(0,0,0,.5);
+        background-color: rgba(0, 0, 0, .5);
         font-size: 20pt;
         width: 100%;
         max-height: 3em;
@@ -273,6 +347,7 @@ blockquote ol {
         z-index: 2;
         pointer-events: none;
     }
+
     & .ux {
         position: absolute;
         top: 0;
@@ -282,6 +357,7 @@ blockquote ol {
         z-index: 11;
         padding: 5px;
     }
+
     & .model_meta {
         position: absolute;
         top: 0;
@@ -291,18 +367,20 @@ blockquote ol {
         text-shadow: 2px 2px 6px #000;
         font-weight: bold;
         font-size: 16pt;
-        background: rgba(0,0,0,0.6);
+        background: rgba(0, 0, 0, 0.6);
         z-index: 8;
         padding: 5px;
         vertical-align: top;
         pointer-events: none;
     }
+
     & .model_base {
         font-family: monospace;
         font-size: 50%;
         vertical-align: super;
         line-height: normal;
     }
+
     /*
     html {
         background-color: #0b0f19;
@@ -321,6 +399,7 @@ blockquote ol {
         font-weight: bold;
         text-decoration: none;
     }
+
     & .ux a {
         display: block;
         float: right;
@@ -328,6 +407,7 @@ blockquote ol {
         height: 1.5em;
         width: 1.5em;
     }
+
     & span.button {
         cursor: pointer;
         display: inline-block;
@@ -340,17 +420,21 @@ blockquote ol {
         background-color: #99aaff;
         opacity: 0.75;
     }
-    & input:checked + span.button {
+
+    & input:checked+span.button {
         background-color: #3457D5;
         color: #fff;
         font-weight: bold;
         opacity: 1;
     }
+
     & label.checkbox input[type=checkbox] {
         display: none;
     }
+
     & .ch_active_card {
         outline: 2px gold solid;
     }
 }
+
 /* End of Civitai Helper Browser */

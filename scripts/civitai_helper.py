@@ -89,23 +89,22 @@ def on_ui_tabs():
     # with gr.Blocks(css=".block.padded {padding: 10px !important}") as civitai_helper:
 
         # init
-        with gr.Box(elem_classes="ch_box"):
+        with gr.Accordion("Scan Models", open=True, elem_classes="ch_box"):
             sections.scan_models_section()
 
-        with gr.Box(elem_classes="ch_box"):
+        with gr.Accordion("Get Model Info from Civitai URL", open=False, elem_classes="ch_box"):
             sections.get_model_info_by_url_section()
 
-        with gr.Box(elem_classes="ch_box"):
-            gr.Markdown("### Download Model")
+        with gr.Accordion("Download Model", open=True, elem_classes="ch_box"):
             with gr.Tab("Single", elem_id="ch_dl_single_tab"):
                 sections.download_section()
             with gr.Tab("Batch Download"):
                 sections.download_multiple_section()
 
-        with gr.Box(elem_classes="ch_box"):
+        with gr.Accordion("Scan for Duplicates", open=False, elem_classes="ch_box"):
             sections.scan_for_duplicates_section()
 
-        with gr.Box(elem_classes="ch_box"):
+        with gr.Accordion("Check New Versions", open=False, elem_classes="ch_box"):
             sections.check_new_versions_section(js_msg_txtbox)
 
         # ====Footer====
